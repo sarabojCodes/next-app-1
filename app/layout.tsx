@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+         <ul className="flex  gap-3 ">
+          <li className="text-sm hover:text-blue-600 hover:underline">
+            <Link href={"/"}>Home</Link>
+          </li>
+          <li className="text-sm hover:text-blue-600 hover:underline">
+            <Link href={
+              "/about"
+            }>
+            About</Link>
+          </li>
+         </ul>
+         
+        {children}</body>
     </html>
   );
 }
